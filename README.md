@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+# Banktrack Front-End Technical Interview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You are asked to implement, using the stack of your choice (but preferably React), the screens named “screen_1.png” and “screen_2.png”. You are given all the assets you might need inside the folder “assets”.
 
-## Available Scripts
+<p align="center">
+    <img alt="screen1" title="screen1" src="https://ik.imagekit.io/manuelalferez/banktrack-interview/screen_1_xWmUIUSn7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1656321349051" width="600">
+</p>
 
-In the project directory, you can run:
+<p align="center">
+    <img alt="screen1" title="screen1" src="https://ik.imagekit.io/manuelalferez/banktrack-interview/screen_2__2fEraYnn.png?ik-sdk-version=javascript-1.4.3&updatedAt=1656321351743" width="600">
+</p>
 
-### `npm start`
+As shown, you are asked to implement a standard bank connection flow. To do so, the users must write both their username and their password.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+We have prepared a mock API for this interview. This API returns three different errors depending on which combination of user and password you introduce in the form. Make sure that you adapt “screen_2.png” according to each different error.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## API Endpoint
+```
+POST https://xi3z5youw7.execute-api.eu-west-1.amazonaws.com/prod/connect_bank 
+```
 
-### `npm test`
+```
+POST BODY (json): {“u”: <username>, “p”: <password>}
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Scenarios
+### Scenario 1:
+```
+Username: interview@banktrack.com Password: scenario_1
+```
 
-### `npm run build`
+### Scenario 2:
+```
+Username: interview@banktrack.com Password: scenario_2
+```
+### Scenario 3:
+```
+Any other combination of username and password.
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Important to know
+- More than 60% of our users access Banktrack using a mobile phone.
+- Limit the amount of API calls by using front-end input validation.
+- Note that there’s no successful scenario and this interview only deals with different errors.
+- The username is always an email and the password should contain at least one char and one number.
+- The font family is “DM Sans”.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Request example 
+<p align="center">
+    <img alt="screen1" title="screen1" src="https://ik.imagekit.io/manuelalferez/banktrack-interview/request_example_F5rM6pcg9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1656321716909" width="600">
+</p>
