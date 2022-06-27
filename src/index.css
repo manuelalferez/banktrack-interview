@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  @apply bg-mypeach;
+}
+
+.form input {
+  @apply text-xl p-4;
+}

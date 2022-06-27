@@ -1,10 +1,11 @@
 import Layout from "./components/Layout";
+import Login from "./components/Login";
 
 function App() {
   return (
     <Layout>
-      <div className="bg-mygray">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <div>
+        <Login />
       </div>
     </Layout>
   );
