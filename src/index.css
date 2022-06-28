@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  @apply bg-mypeach;
+  @apply bg-mypeach font-sans;
 }
 
 .form input {

@@ -24,9 +24,9 @@ function Login() {
     <div className="col-start-1 col-end-7 xl:col-start-3 xl:col-end-5 bg-white max-w-md px-16 py-10 shadow-md rounded-2xl place-items-center mx-auto">
       <div className="flex items-center">
         <img src={sabadellLogo} className="w-16" />
-        <h1 className="text-xl md:text-2xl ml-6">Banco Sabadell</h1>
+        <h1 className="text-xl md:text-2xl ml-6 font-bold">Banco Sabadell</h1>
       </div>
-      <p className="text-gray-600">
+      <p className="text-gray-600 text-[14px]">
         Escribe tu identificador y contraseña de Banco Sabadell para conectar
         con el banco.
       </p>
