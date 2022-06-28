@@ -6,8 +6,27 @@ import iconInvisible from "../assets/icon-invisible.svg";
 import { Input } from "@material-tailwind/react";
 import { useState } from "react";
 
+const validateEmail = (email: string): boolean => {
+  return email
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    ) == null
+    ? true
+    : false;
+};
+
+const validatePassword = (password: string): boolean => {
+  return password
+    .toLowerCase()
+    .match(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/) === null
+    ? true
+    : false;
+};
+
 function Login() {
   let [visible, setVisible] = useState(false);
+  let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
 
   function handleChange(event: React.FormEvent<HTMLInputElement>) {
@@ -32,7 +51,13 @@ function Login() {
       </p>
       <div className="form my-8 space-y-6">
         <div>
-          <Input color="indigo" label="Identificador" />
+          <Input
+            color="indigo"
+            label="Identificador"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            error={validateEmail(email)}
+          />
           <p className="text-[12px] text-gray-500 mt-6">
             Identificador que pones en la web o app de Banco Sabadell
           </p>
@@ -45,6 +70,7 @@ function Login() {
             size="lg"
             value={visible ? password : "*".repeat(password.length)}
             onChange={(e) => handleChange(e)}
+            error={validatePassword(password)}
             icon={
               visible ? (
                 <img
