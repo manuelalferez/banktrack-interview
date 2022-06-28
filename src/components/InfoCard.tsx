@@ -4,7 +4,7 @@ import invisibleIcon from "../assets/icon-invisible.svg";
 
 function InfoCard() {
   return (
-    <div className="row-start-2 xl:row-start-1 col-start-2 md:col-start-3 col-end-6 mt-8 xl:col-start-5 xl:col-end-7 bg-white max-w-xs text-sm shadow-md rounded-2xl h-min py-6 px-2 xl:ml-8 xl:mt-0">
+    <div className="row-start-2 xl:row-start-1 col-start-2 md:col-start-3 col-end-6 mt-8 xl:col-start-5 xl:col-end-7 bg-white max-w-xs text-sm shadow-lg rounded-2xl h-min py-6 px-2 xl:ml-8 xl:mt-0">
       <div className="flex items-start p-2">
         <img src={lockIcon} />
         <p className="px-4 text-gray-800">
